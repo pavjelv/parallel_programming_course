@@ -1,6 +1,7 @@
 // Copyright 2019 Pavel Vorobev
 #include <iostream>
 #include <vector>
+#include <string>
 
 struct point {
     int x;
