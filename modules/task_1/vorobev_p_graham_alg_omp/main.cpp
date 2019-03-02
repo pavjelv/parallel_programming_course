@@ -135,8 +135,8 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < numOfPoints; i++) {
         point p;
-        p.x = myRandInRange((int)min, (int)max);
-        p.y = myRandInRange((int)min, (int)max);
+        p.x = myRandInRange(static_cast<int> (min), static_cast<int> (max));
+        p.y = myRandInRange(static_cast<int> (min), static_cast<int> (max));
         data->push_back(p);
     }
 
