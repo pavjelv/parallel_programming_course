@@ -1,4 +1,6 @@
 // Copyright 2019 Pavel Vorobev
+#include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
 #include <string>
