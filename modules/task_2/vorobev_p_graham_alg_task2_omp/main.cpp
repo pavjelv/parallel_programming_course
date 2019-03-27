@@ -148,7 +148,7 @@ int main(int argc, char *argv[]) {
     int s = grahamScan(singleData);
     std::cout << "Hull!" << std::endl;
 
-    for (size_t i = 0; i < s; i++) {
+    for (int i = 0; i < s; i++) {
          std::cout << "(" << singleData->at(i).x << " ,"
              << singleData->at(i).y << " ) ";
     }
@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
                 localData->push_back(data->at(i));
             }
         } else {
-            for (size_t i = currIndex; i < nextIndex; i++) {
+            for (int i = currIndex; i < nextIndex; i++) {
                 localData->push_back(data->at(i));
             }
         }
@@ -184,7 +184,7 @@ int main(int argc, char *argv[]) {
         {
             std::cout << std::endl;
             int size = grahamScan(result);
-            for (size_t i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 std::cout << "(" << result->at(i).x << " ,"
                      << result->at(i).y << " ) ";
             }
