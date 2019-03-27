@@ -1,6 +1,5 @@
 // Copyright 2019 Pavel Vorobev
 
-#include "stdafx.h"
 #include <omp.h>
 #include <iostream>
 #include <vector>
