@@ -113,12 +113,11 @@ int main(int argc, char *argv[]) {
     double numOfPoints = 10000;
     double min = 1;
     double max = 900;
-    int nthreads, tid;
+    int nthreads;
     double t1, t2, dt;
     std::vector<point>* data = new std::vector<point>;
     std::vector<point>* result = new std::vector<point>;
     std::vector<point>* singleData = new std::vector<point>;
-    std::vector<point>* localData;
     if (cmdOptionExists(argv, argv + argc, "-num")) {
         char *wcount = getCmdOption(argv, argv + argc, "-num");
         numOfPoints = atof(wcount);
@@ -158,10 +157,10 @@ int main(int argc, char *argv[]) {
     std::cout << std::endl << "time: " << dt;
     t1 = omp_get_wtime();
 
-    #pragma omp parallel private(tid, localData) shared(data, result)
+    #pragma omp parallel shared(data, result)
     {
-        localData = new std::vector<point>;
-        tid = omp_get_thread_num();
+        std::vector<point>* localData = new std::vector<point>;
+        int tid = omp_get_thread_num();
         nthreads = omp_get_num_threads();
         int currIndex = tid * (data->size() / nthreads);
         int nextIndex = (tid + 1) * (data->size() / nthreads);
