@@ -1,7 +1,7 @@
 message(STATUS "Task 1")
 
-add_subdirectory(kutovoi_v_rectangle_integr_omp)
-add_subdirectory(khomenko_a_shell_sort_w_simple_merge_omp)
-add_subdirectory(gladyshev_a_gauss_omp)
-add_subdirectory(zinoviev_v_shtrassen_mul_omp)
-add_subdirectory(krasikova_e_cannon_omp)
+SUBDIRLIST(subdirs ${CMAKE_CURRENT_SOURCE_DIR})
+
+foreach(subd ${subdirs})
+  add_subdirectory(${subd})
+endforeach()
