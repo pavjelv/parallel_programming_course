@@ -179,7 +179,7 @@ int main() {
         std::cout << "( " << data->at(i).x << ", " << data->at(i).y << ") ";
     }
 
-    std::vector<point>().swap(*data);
+    delete data;
 
     tbb::tick_count t3 = tbb::tick_count::now();
     int size = grahamScanParallel(parallelData);
@@ -192,7 +192,7 @@ int main() {
     }
     std::cout << std::endl;
 
-    std::vector<point>().swap(*parallelData);
+    delete parallelData;
     return 0;
 }
 
