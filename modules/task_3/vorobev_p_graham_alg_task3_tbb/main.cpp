@@ -2,6 +2,7 @@
 
 #include <tbb/tbb.h>
 #include <tbb/parallel_sort.h>
+#include <vector>
 #include <random>
 #include <ctime>
 #include <iostream>
