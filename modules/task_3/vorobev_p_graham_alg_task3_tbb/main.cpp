@@ -156,7 +156,6 @@ int main() {
     double max = 10000;
     std::vector<point>* data = new std::vector<point>;
     std::vector<point>* parallelData = new std::vector<point>;
-    std::vector<point>* a = new std::vector<point>;
     for (size_t i = 0; i < numOfPoints; i++) {
         point p;
         p.x = randomize(static_cast<int> (min) + std::rand() %
@@ -165,7 +164,6 @@ int main() {
             (static_cast<int> (max) - static_cast<int> (min) + 1));
         data->push_back(p);
         parallelData->push_back(p);
-        a->push_back(p);
     }
     int num_threads = 4;
     tbb::task_scheduler_init init(num_threads);
@@ -179,8 +177,6 @@ int main() {
         std::cout << "( " << data->at(i).x << ", " << data->at(i).y << ") ";
     }
 
-    delete data;
-
     tbb::tick_count t3 = tbb::tick_count::now();
     int size = grahamScanParallel(parallelData);
     tbb::tick_count t4 = tbb::tick_count::now();
@@ -192,6 +188,7 @@ int main() {
     }
     std::cout << std::endl;
 
+    delete data;
     delete parallelData;
     return 0;
 }
