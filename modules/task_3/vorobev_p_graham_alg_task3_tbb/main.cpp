@@ -159,7 +159,7 @@ int grahamScanParallel(std::vector<point> *a) {
     return m + 1;
 }
 
-double randomize(double value) {
+int randomize(int value) {
     double min = 1;
     double max = 4;
     return value + (static_cast<int> (min) + std::rand() %
