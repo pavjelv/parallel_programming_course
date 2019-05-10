@@ -168,7 +168,7 @@ double randomize(double value) {
 
 int main() {
     std::srand((unsigned)time(NULL));
-    double numOfPoints = 10000000;
+    double numOfPoints = 10000;
     double min = 1;
     double max = 10000;
     std::vector<point>* data = new std::vector<point>;
