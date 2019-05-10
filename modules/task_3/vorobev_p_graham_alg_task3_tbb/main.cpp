@@ -75,7 +75,7 @@ int partition(std::vector<point> *a, int low, int high) {
 
 void quickSort(std::vector<point> *a, int low, int high) {
     if (low < high) {
-        int	partIndex = partition(a, low, high);
+        int partIndex = partition(a, low, high);
         quickSort(a, low, partIndex - 1);
         quickSort(a, partIndex + 1, high);
     }
